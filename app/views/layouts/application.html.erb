@@ -5,9 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu|Poiret+One|Amatic+SC:700' rel='stylesheet' type='text/css'>
 <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
 
 <nav class="navbar navbar-default">
@@ -76,7 +78,7 @@
 
 					</br>
 					<div class="input-group">
-				        <%= f.submit "Log In", class: "btn btn-warning" %>
+				        <%= f.submit "Log In", class: "btn btn-danger" %>
 					</div>
 
 				<% end %>
@@ -106,7 +108,7 @@
 				        </div>
 				    </br>
 				        <div class="input-group">
-				        	<%= f.submit "Sign Up", :class => "btn btn-warning" %>
+				        	<%= f.submit "Sign Up", :class => "btn btn-danger" %>
 				    	</div>
 				<% end %>
     		</div>
