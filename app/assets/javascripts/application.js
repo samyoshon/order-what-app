@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require jquery.turbolinks
 
 $('#myTabs a').click(function (e) {
   e.preventDefault()

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
 gem 'pry-rails'
 gem 'awesome_print'
 gem 'faker'
