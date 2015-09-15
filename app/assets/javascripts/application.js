@@ -23,4 +23,12 @@ $('#myTabs a').click(function (e) {
 
 $(document).ready(function () {
     $(".player").mb_YTPlayer();
+
+    $('.showComment').click(function() {
+    	$(this).parent().parent().next().next().fadeToggle();
+    })
+
+    $('.showReply').click(function() {
+    	$(this).parent().parent().next().next().fadeToggle();
+    })
 });

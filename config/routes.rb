@@ -10,9 +10,9 @@ post '/biz/menu' => 'businesses#menu', as: :business_menu
 
 post '/biz/comment' => 'businesses#comment', as: :business_comment
 
-post '/biz/menu-like' => 'menus#vote', as: :menu_like
+post '/biz/menu_like' => 'menus#vote', as: :menu_like
 
-post '/biz/comment-like' => 'comments#vote', as: :comment_like
+post '/biz/comment_like' => 'comments#vote', as: :comment_like
 
 post '/login' => 'users#login', as: :login_user
 
