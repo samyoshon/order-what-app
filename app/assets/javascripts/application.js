@@ -22,7 +22,5 @@ $('#myTabs a').click(function (e) {
 })
 
 $(document).ready(function () {
-
     $(".player").mb_YTPlayer();
-
 });
