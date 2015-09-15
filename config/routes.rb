@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
-root 'businesses#index', as: :businesses
+root 'businesses#index', as: :business
 
 # get '/index' => 'restaurants#search', as: :restaurants_search ## HOW DO I GET SEARCH TO WORK?
 
-get '/biz/:id' => 'businesses#new', as: :businesses_new
+get '/biz/:id' => 'businesses#new', as: :business_new
 
-post '/biz/menu' => 'businesses#menu', as: :businesses_menu
+post '/biz/menu' => 'businesses#menu', as: :business_menu
 
-post '/biz/comment' => 'businesses#comment', as: :businesses_comment
+post '/biz/comment' => 'businesses#comment', as: :business_comment
+
+post '/biz/menu-like' => 'menus#vote', as: :menu_like
+
+post '/biz/comment-like' => 'comments#vote', as: :comment_like
 
 post '/login' => 'users#login', as: :login_user
 

@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914165008) do
+ActiveRecord::Schema.define(version: 20150914185450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
     t.integer  "rating"
     t.string   "address"
     t.datetime "created_at", null: false
@@ -52,9 +51,9 @@ ActiveRecord::Schema.define(version: 20150914165008) do
   create_table "user_comment_tables", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "comment_id"
-    t.boolean  "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "like"
   end
 
   add_index "user_comment_tables", ["comment_id"], name: "index_user_comment_tables_on_comment_id", using: :btree
@@ -63,9 +62,9 @@ ActiveRecord::Schema.define(version: 20150914165008) do
   create_table "user_menu_tables", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "menu_id"
-    t.boolean  "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "like"
   end
 
   add_index "user_menu_tables", ["menu_id"], name: "index_user_menu_tables_on_menu_id", using: :btree

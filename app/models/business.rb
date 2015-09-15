@@ -1,4 +1,5 @@
 class Business < ActiveRecord::Base
+	
 	has_many :menus
 
 	def self.search(search)

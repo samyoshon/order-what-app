@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
 gem 'awesome_print'
 gem 'faker'
+gem 'bootstrap-sass'
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
