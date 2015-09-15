@@ -15,3 +15,14 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+$(document).ready(function () {
+
+    $(".player").mb_YTPlayer();
+
+});
