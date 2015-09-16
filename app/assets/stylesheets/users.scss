@@ -1,0 +1,109 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.input-group-addon {
+	width: 100px;
+}
+
+.form-control {
+	width: 300px !important;
+}
+
+.input-group {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.video-section .pattern-overlay {
+background-color: rgba(71, 71, 71, 0.29);
+padding: 110px 0 32px;
+min-height: 550px; 
+/* Incase of overlay problems just increase the min-height*/
+}
+
+.video-section h1, .video-section h3{
+text-align:center;
+color:#fff;
+}
+
+.video-section h1{
+font-size:110px;
+font-family: 'Buenard', serif;
+font-weight:bold;
+text-transform: uppercase;
+margin: 40px auto 0px;
+text-shadow: 1px 1px 1px #000;
+-webkit-text-shadow: 1px 1px 1px #000;
+-moz-text-shadow: 1px 1px 1px #000;
+}
+
+.video-section h3{
+font-size: 25px;
+font-weight:lighter;
+margin: 0px auto 15px;
+}
+
+.video-section .buttonBar{display:none;}
+.player {font-size: 1px;}
+
+#searchbar {
+	text-align: center;
+	margin-top: 345px;
+}
+
+input#search {
+	width: 500px;
+	height: 50px;
+	opacity: .7;
+	border-radius: 4px;
+	padding-left: 10px;
+}
+
+.glyphicon-search {
+	width: 50px;
+	height: 50px;
+	background-color: #CB3B3B;
+	color: white;
+	opacity: 1;
+	border-radius: 4px;
+}
+
+#featured {
+	width: 1000px;
+	height: 300px;
+	margin: 55px auto;
+	padding-left: 55px;
+	padding-right: 55px;
+	border-style: border-box;
+	position: relative;
+	display: flex;
+}
+
+#featured_menu {
+	width: 33.3%;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f4f2f2;
+	border-style: border-box;
+	padding: 25px 40px;
+}
+
+#featured_image {
+	width: 66.6%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url('mendocinofarms.jpeg');
+	position: bottom;
+}
+
+#special_image {
+	width: 50px;
+	height: 50px;
+}

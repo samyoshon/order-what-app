@@ -1,0 +1,49 @@
+#biz_header {
+	width: 100%;
+	height: 235px;
+	text-align: center;
+	background-image: url('header.jpg');
+}
+
+#biz_title {
+	margin-top: 0px;
+	padding-top: 65px;
+	font-size: 100px;
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	opacity: 0.9;
+}
+
+#biz_body {
+	width: 1000px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+}
+
+.upbox {
+	position: relative;
+	display: flex;
+	padding: 30px;	
+}
+
+.menu_item {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vote_buttons {
+	width: 15%;
+}
+
+.text_buttons {
+	width: 85%;
+}
+
+#comment {
+	width: 90%;
+	height: 90%;
+	padding: 15px;
+}
+

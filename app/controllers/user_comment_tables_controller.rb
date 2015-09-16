@@ -1,0 +1,2 @@
+class UserCommentTablesController < ApplicationController
+end

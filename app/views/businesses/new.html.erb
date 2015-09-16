@@ -1,0 +1,46 @@
+<div id="biz_header">
+	<h1 id="biz_title"><%= @business.name %></h1>
+</div>
+
+<div id="biz_body">
+	<% @menus.each do |m| %>
+		<div class="panel panel-default upbox">
+	   		<div id="votes" class="menu_item">
+	   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, menu_like_path(vote: 'up', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
+		   		<span class="vote_buttons"><%= m.likes %></span> 
+		    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, menu_like_path(vote: 'down', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
+		    </div>
+		    <div class="text_buttons">
+		    	<%= m.name %> <%= m.price %>
+	    	</div>
+	    	<div>
+				<button class="showComment btn btn-danger">Comment</button>
+			</div>
+		</div>
+
+		<% @comments = Comment.where(menu_id: m.id).all %>
+		<% @comments.sort_by {|comment| comment.likes } %>
+		<% @comments.each do |c| %>
+			<div id="comment" class="panel panel-default upbox">
+				<div class="menu_item">
+		   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+			   		<span class="vote_buttons"><%= c.likes %></span> 
+			    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+				</div>
+				<div class="text_buttons">
+					<%= c.comment %>
+				</div>
+			</div>
+		<% end %>
+
+		<div class="commentBox" style="display: none;">
+			<%= form_for :comment, url: comment_user_path do |f| %>
+				<%= hidden_field_tag "menu_id", m.id %>
+				<%= hidden_field_tag "restaurant_id", params[:id] %> 
+                <%= f.text_field :comment, class: "form-control" %> 
+                <%= f.submit "Comment", class: "btn btn-danger" %>
+            <% end %>
+        </div>
+
+	<% end %>
+</div>

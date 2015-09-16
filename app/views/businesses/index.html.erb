@@ -1,0 +1,24 @@
+<section class="content-section video-section">
+  <div class="pattern-overlay">
+  <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=PZ4pctQMdg4',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1, startAt:2, showControls: true}">bg</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <h4>
+                <%= form_tag('/', method: "get", id: 'searchbar') do %>
+                    <%= text_field_tag :search, nil, placeholder: 'korean bbq, dinner date, Felipe\'s' %>
+                    <%= button_tag '', id: 'search', class: "glyphicon glyphicon-search" %>
+                <% end %>
+            </h4>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="featured" class="container">
+    <div id="featured_menu">
+        <h3><%= link_to @featured_menu.name + ' @ ' + @featured_business.name, business_new_path(@featured_business.id) %></h3>
+    </div>
+    <div id="featured_image"></div>
+</div>
