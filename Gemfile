@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'semantic-ui-rails'
 gem 'jquery-turbolinks'
 gem 'pry-rails'
 gem 'awesome_print'

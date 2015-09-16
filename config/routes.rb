@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 root 'businesses#index', as: :business
 
-# get '/index' => 'restaurants#search', as: :restaurants_search ## HOW DO I GET SEARCH TO WORK?
-
 get '/biz/:id' => 'businesses#new', as: :business_new
+
+get '/list' => 'businesses#search', as: :business_search
 
 post '/biz/menu' => 'businesses#menu', as: :business_menu
 

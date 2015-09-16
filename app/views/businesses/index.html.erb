@@ -5,8 +5,8 @@
       <div class="row">
         <div class="col-lg-12">
             <h4>
-                <%= form_tag('/', method: "get", id: 'searchbar') do %>
-                    <%= text_field_tag :search, nil, placeholder: 'korean bbq, dinner date, Felipe\'s' %>
+                <%= form_tag('/list', method: "get", id: 'searchbar') do %>
+                    <%= text_field_tag :query, nil, placeholder: 'korean bbq, dinner date, Felipe\'s' %>
                     <%= button_tag '', id: 'search', class: "glyphicon glyphicon-search" %>
                 <% end %>
             </h4>
@@ -20,7 +20,7 @@
     <div id="featured_menu">
         <h3><%= link_to @featured_menu.name + ' @ ' + @featured_business.name, business_new_path(@featured_business.id) %></h3>
     </div>
-    <div id="featured_image"><%= image_tag(@featured_menu.img) %></div>
+    <div id="featured_image"><%= image_tag(@featured_menu.image) %></div>
 </div>
 
 

@@ -39,7 +39,7 @@ before_action :authorize, :except => [:login, :create, :logout, :user_params]
 
  	def comment
 		@comment = Comment.new(comment: params[:comment][:comment], menu_id: params[:menu_id])
-		@comment.user = session[:user_id]
+		@comment.user_id = session[:user_id]
   		@comment.save
   		redirect_to business_new_path(params[:restaurant_id])
  	end

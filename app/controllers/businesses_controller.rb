@@ -12,5 +12,25 @@ class BusinessesController < ApplicationController
 		@menus = @menusort.sort_by{|menu| menu.likes}.reverse!
   	end
 
+  	def search
+  		if params[:query]
+	        @query = params[:query]
+	        @menus = []
+	        @businesses = []
+	        menu_list = Menu.all
+	        menu_list.each do |menu|
+	        	if menu.name.downcase.include? @query.downcase 
+	        		@menus << menu
+	        	end
+	       	end
+
+	        business_list = Business.all
+	        business_list.each do |business|
+	        	if business.name.downcase.include? @query.downcase
+	        		@businesses << business
+	        	end
+	        end
+	  	end
+  	end
 
 end

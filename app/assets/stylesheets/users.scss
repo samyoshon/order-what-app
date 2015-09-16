@@ -56,7 +56,7 @@ margin: 0px auto 15px;
 	margin-top: 345px;
 }
 
-input#search {
+input#query {
 	width: 500px;
 	height: 50px;
 	opacity: .7;
@@ -96,10 +96,15 @@ input#search {
 
 #featured_image {
 	width: 66.6%;
+	height: 300px;
+	overflow: hidden;
+}
+
+#featured_image img {
+	width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: url('mendocinofarms.jpeg');
 	position: bottom;
 }
 
