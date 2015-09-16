@@ -42,6 +42,8 @@
 
 .text_buttons {
 	width: 85%;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #comment {
@@ -50,3 +52,14 @@
 	padding: 5px;
 }
 
+input#comment_comment {
+	display: inline;
+	width: 600px !important;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.showComment {
+	margin-top: 15px;
+}

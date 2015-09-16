@@ -8,8 +8,8 @@ class BusinessesController < ApplicationController
 
 	def new
 		@business = Business.find(params[:id])
-		@menus = Menu.where(business_id: (params[:id])).all ## CHANGE THIS TO 'NET' MENU LIKES
-		@menus.sort_by{|menu| menu.likes}
+		@menusort = Menu.where(business_id: (params[:id])).all ## CHANGE THIS TO 'NET' MENU LIKES
+		@menus = @menusort.sort_by{|menu| menu.likes}.reverse!
   	end
 
 

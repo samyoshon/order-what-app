@@ -4,8 +4,8 @@
 
 <div id="biz_body">
 	<% @menus.each do |m| %>
-		<div class="panel panel-default upbox">
-	   		<div id="votes" class="menu_item">
+		<div id="vote" class="panel panel-default upbox">
+	   		<div class="menu_item">
 	   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, menu_like_path(vote: 'up', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
 		   		<span class="vote_buttons"><%= m.likes %></span> 
 		    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, menu_like_path(vote: 'down', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
@@ -18,8 +18,8 @@
 			</div>
 		</div>
 
-		<% @comments = Comment.where(menu_id: m.id).all %>
-		<% @comments.sort_by {|comment| comment.likes } %>
+		<% @commentsort = Comment.where(menu_id: m.id).all %>
+		<% @comments = @commentsort.sort_by{|comment| comment.likes}.reverse! %>
 		<% @comments.each do |c| %>
 			<div id="comment" class="panel panel-default upbox">
 				<div class="menu_item">
@@ -33,13 +33,15 @@
 			</div>
 		<% end %>
 
-		<div class="commentBox" id="box<%= m.id %>" style="display: none;">
+		<div id="box<%= m.id %>" style="display: none;">
+			<div id="commentBox">
 			<%= form_for :comment, url: comment_user_path do |f| %>
 				<%= hidden_field_tag "menu_id", m.id %>
 				<%= hidden_field_tag "restaurant_id", params[:id] %> 
                 <%= f.text_field :comment, class: "form-control" %> 
                 <%= f.submit "Comment", class: "btn btn-danger" %>
             <% end %>
+        	</div>
         </div>
 
 	<% end %>

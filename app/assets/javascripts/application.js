@@ -27,7 +27,9 @@ $(document).ready(function () {
 
     $('.showComment').click(function() {
     	$('#box' + this.id).fadeToggle();
-    	$('#box' + this.id).scrollTo(200);
+    	$('html, body').animate({
+        	scrollTop: $('#box' + this.id).offset().top
+    	}, 1000);
     })
 
 });
