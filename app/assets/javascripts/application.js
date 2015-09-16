@@ -26,10 +26,8 @@ $(document).ready(function () {
     $(".player").mb_YTPlayer();
 
     $('.showComment').click(function() {
-    	$(this).parent().parent().next().next().fadeToggle();
+    	$('#box' + this.id).fadeToggle();
+    	$('#box' + this.id).scrollTo(200);
     })
 
-    $('.showReply').click(function() {
-    	$(this).parent().parent().next().next().fadeToggle();
-    })
 });

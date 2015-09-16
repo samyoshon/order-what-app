@@ -14,7 +14,7 @@
 		    	<%= m.name %> <%= m.price %>
 	    	</div>
 	    	<div>
-				<button class="showComment btn btn-danger">Comment</button>
+				<button class="showComment btn btn-danger" id="<%= m.id %>">Comment</button>
 			</div>
 		</div>
 
@@ -33,7 +33,7 @@
 			</div>
 		<% end %>
 
-		<div class="commentBox" style="display: none;">
+		<div class="commentBox" id="box<%= m.id %>" style="display: none;">
 			<%= form_for :comment, url: comment_user_path do |f| %>
 				<%= hidden_field_tag "menu_id", m.id %>
 				<%= hidden_field_tag "restaurant_id", params[:id] %> 
