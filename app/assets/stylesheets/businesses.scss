@@ -20,6 +20,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 60px;
+	font-family: 'Amatic SC', cursive;
 }
 
 .upbox {
@@ -28,12 +29,21 @@
 	padding: 20px;	
 }
 
-.menu_item {
+.vote_div {
 	margin-left: auto;
 	margin-right: auto;
 	height: auto;
 	width: 15px;
 	text-align: center;
+	padding-top: 5px;
+}
+
+#vote_count {
+	font-size: 30px;
+}
+
+#comment_vote_div {
+	padding-top: 2px;
 }
 
 .vote_buttons {
@@ -52,14 +62,29 @@
 	padding: 5px;
 }
 
-input#comment_comment {
-	display: inline;
+textarea#comment_comment {
 	width: 600px !important;
-	height: 200px;
+	height: 100px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .showComment {
-	margin-top: 15px;
+	margin-top: 25px;
+}
+
+#commentBox {
+	text-align: center;
+}
+
+#menu_language {
+	font-size: 45px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+#comment_language {
+	font-size: 25px;
+	margin-top: 9px;
+	margin-bottom: 0px;
 }

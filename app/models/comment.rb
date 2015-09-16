@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user 
   belongs_to :menu
 
   has_many :user_comment_tables

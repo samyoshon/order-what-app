@@ -24,4 +24,6 @@ post '/reply' => 'users#reply', as: :reply_user
 
 get '/logout' => 'users#logout', as: :logout_user
 
+delete '/comment/delete' => 'comments#destroy', as: :comment_delete
+
 end

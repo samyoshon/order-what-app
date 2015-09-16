@@ -1,5 +1,7 @@
 class MenusController < ApplicationController
 
+before_action :authorize   
+
 	def vote
 
 	  	if params[:vote] == "up"

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :authorize, :except => [:login, :create, :logout, :user_params]
+
 	def login
 		@email = params[:user][:email].downcase
     	@password = params[:user][:password]
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
 			    session[:user_id] = user.id
 		        redirect_to business_path
 	    	else
-		    	flash.now[:red] = "Unable to sign in. Please try again."
+		    	flash.now[:danger] = "Unable to sign in. Please try again."
 		    	render 'new' ## // CHANGE PATH NAME
 	    	end
 	end

@@ -29,7 +29,7 @@ $(document).ready(function () {
     	$('#box' + this.id).fadeToggle();
     	$('html, body').animate({
         	scrollTop: $('#box' + this.id).offset().top
-    	}, 1000);
+		}, 1000);
     })
 
 });

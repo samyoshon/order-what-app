@@ -2,16 +2,19 @@
 	<h1 id="biz_title"><%= @business.name %></h1>
 </div>
 
+<div>
+</div>
+
 <div id="biz_body">
 	<% @menus.each do |m| %>
 		<div id="vote" class="panel panel-default upbox">
-	   		<div class="menu_item">
+	   		<div id="menu_vote_div" class="vote_div">
 	   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, menu_like_path(vote: 'up', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
-		   		<span class="vote_buttons"><%= m.likes %></span> 
+		   		<span id="vote_count" class="vote_buttons"><%= m.likes %></span> 
 		    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, menu_like_path(vote: 'down', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
 		    </div>
 		    <div class="text_buttons">
-		    	<%= m.name %> <%= m.price %>
+		    	<h3 id="menu_language"><%= m.name %> <%= m.price %></h3>
 	    	</div>
 	    	<div>
 				<button class="showComment btn btn-danger" id="<%= m.id %>">Comment</button>
@@ -22,13 +25,18 @@
 		<% @comments = @commentsort.sort_by{|comment| comment.likes}.reverse! %>
 		<% @comments.each do |c| %>
 			<div id="comment" class="panel panel-default upbox">
-				<div class="menu_item">
+				<div id="comment_vote_div" class="vote_div">
 		   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 			   		<span class="vote_buttons"><%= c.likes %></span> 
 			    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 				</div>
 				<div class="text_buttons">
-					<%= c.comment %>
+					<h3 id="comment_language"><%= c.comment %></h3>
+				</div>
+				<div>
+				  	<% if c.user_id == session[:user_id] && session[:user_id] != nil %>
+				  		<%= link_to 'delete', comment_delete_path(restaurant_id: params[:id], comment_id: c.id, menu_id: m.id, user_id: session[:user_id]), method: :delete %>
+				  	<% end %>
 				</div>
 			</div>
 		<% end %>
@@ -38,10 +46,12 @@
 			<%= form_for :comment, url: comment_user_path do |f| %>
 				<%= hidden_field_tag "menu_id", m.id %>
 				<%= hidden_field_tag "restaurant_id", params[:id] %> 
-                <%= f.text_field :comment, class: "form-control" %> 
-                <%= f.submit "Comment", class: "btn btn-danger" %>
+                <%= f.text_area :comment, class: "form-control" %>
+            	</br>
+                <%= f.submit "Submit", class: "btn btn-danger" %>
             <% end %>
         	</div>
+        </br>
         </div>
 
 	<% end %>
