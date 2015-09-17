@@ -8,12 +8,4 @@
 		<div class="menu_image"><%= link_to image_tag(menu.image), business_new_path(menu.business_id) %></div>
 	<% end %>
 </ul>
-
-<ul>
-	<% @businesses.each do |business| %>
-		<% menu_images = Menu.where(business_id: business.id).all %>
-		<% @menu_image = menu_images.sort_by{|menu_i| menu_i.likes}.reverse! %>
-			<div class="menu_image"><%= link_to image_tag(@menu_image.first.image), business_new_path(business.id) %></div>
-	<% end %>
-</ul>
-<div>
+</div>

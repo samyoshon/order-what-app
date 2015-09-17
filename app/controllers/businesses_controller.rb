@@ -15,8 +15,11 @@ class BusinessesController < ApplicationController
   	def search
   		if params[:query]
 	        @query = params[:query]
+
 	        @menus = []
+	        @menu_images = []
 	        @businesses = []
+
 	        menu_list = Menu.all
 	        menu_list.each do |menu|
 	        	if menu.name.downcase.include? @query.downcase 
@@ -26,10 +29,15 @@ class BusinessesController < ApplicationController
 
 	        business_list = Business.all
 	        business_list.each do |business|
+				@menus_all = Menu.where(business_id: business.id).all
+				@highest_menu = @menus_all.sort_by{|menu_i| menu_i.likes}.reverse!
 	        	if business.name.downcase.include? @query.downcase
-	        		@businesses << business
+	        		@menus << @highest_menu.first
 	        	end
 	        end
+
+	        @menus.uniq!
+
 	  	end
   	end
 
