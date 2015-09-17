@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'seed_dump'
 gem 'semantic-ui-rails'
 gem 'jquery-turbolinks'
 gem 'pry-rails'
