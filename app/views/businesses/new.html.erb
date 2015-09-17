@@ -9,9 +9,9 @@
 	<% @menus.each do |m| %>
 		<div id="vote" class="panel panel-default upbox">
 	   		<div id="menu_vote_div" class="vote_div">
-	   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, menu_like_path(vote: 'up', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
+	   			<span class="vote_buttons voteButton"><%= link_to '&#9650'.html_safe, menu_like_path(vote: 'up', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
 		   		<span id="vote_count" class="vote_buttons"><%= m.likes %></span> 
-		    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, menu_like_path(vote: 'down', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
+		    	<span class="vote_buttons voteButton"><%= link_to '&#9660'.html_safe, menu_like_path(vote: 'down', restaurant_id: params[:id], menu_id: m.id), method: :post %></span> 
 		    </div>
 		    <div class="text_buttons">
 		    	<h3 id="menu_language"><%= m.name %> <%= m.price %></h3>
@@ -26,9 +26,9 @@
 		<% @comments.each do |c| %>
 			<div id="comment" class="panel panel-default upbox">
 				<div id="comment_vote_div" class="vote_div">
-		   			<span class="vote_buttons"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+		   			<span class="vote_buttons voteButton"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 			   		<span class="vote_buttons"><%= c.likes %></span> 
-			    	<span class="vote_buttons"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+			    	<span class="vote_buttons voteButton"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 				</div>
 				<div class="text_buttons">
 					<h3 id="comment_language"><%= c.comment %></h3>

@@ -62,6 +62,8 @@ input#query {
 	opacity: .7;
 	border-radius: 4px;
 	padding-left: 10px;
+		
+	font-weight: 300;
 }
 
 .glyphicon-search {
@@ -92,6 +94,12 @@ input#query {
 	background-color: #f4f2f2;
 	border-style: border-box;
 	padding: 25px 40px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+#featured_menu h3 {
+	font-size: 35px;
 }
 
 #featured_image {

@@ -32,4 +32,11 @@ $(document).ready(function () {
 		}, 1000);
     })
 
+    $('.voteButton a').hover(function(){
+    	$(this).toggleClass('voteToggle');
+    });
+
+    $('.menuImage').hover(function() {
+    	$(this).toggleClass('menuToggle');
+    });
 });

@@ -23,17 +23,18 @@ before_action :authorize, :except => [:login, :create, :logout, :user_params]
 		@user = User.new(user_params)
 
 		    if @user.save
-		      flash[:success] = @user.name + ", let's eat!"
-		      redirect_to business_path
+		    	session[:user_id] = @user.id
+		      	flash[:success] = @user.name + ", let's eat!"
+		      	redirect_to business_path
 		    else
-		      render 'new' ## // CHANGE PATH NAME
+		     	render 'new' ## // CHANGE PATH NAME
 		    end
 	end
 
 	def logout
-      session[:user_id] = nil
-      flash.now[:danger] = 'You have been logged out.'
-      redirect_to business_path
+    	flash[:danger] = 'See ya later.'
+    	session[:user_id] = nil
+    	redirect_to business_path
  	end
 
 

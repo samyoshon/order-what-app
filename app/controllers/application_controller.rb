@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
       unless current_user
-        flash[:danger] = "You must be signed in."
+        flash[:danger] = "You must be logged in."
         redirect_to business_path
       end
   end
