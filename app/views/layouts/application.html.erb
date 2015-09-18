@@ -35,9 +35,8 @@
             		<%= User.find(session[:user_id]).name %>
             		<span class="caret"></span></a>
             			<ul class="dropdown-menu">
-  			            <li><a href="#">Action</a></li>
-  			            <li><a href="#">Another action</a></li>
-  			            <li><a href="#">Something else here</a></li>
+  			            <li><a href="#">Profile</a></li>
+  			            <li><a href="#">Favorites</a></li>
   			            <li role="separator" class="divider"></li>
   			            <li><%= link_to "Logout", logout_user_path %></li>
             			</ul>
