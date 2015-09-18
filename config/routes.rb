@@ -12,6 +12,8 @@ post '/biz/comment' => 'businesses#comment', as: :business_comment
 
 post '/biz/menu_like' => 'menus#vote', as: :menu_like
 
+post '/biz/menu_add' => 'menus#create', as: :create_menu
+
 post '/biz/comment_like' => 'comments#vote', as: :comment_like
 
 post '/login' => 'users#login', as: :login_user

@@ -38,4 +38,12 @@ before_action :authorize
 
 	  	end		
 	end
+
+	def create 
+		menu = Menu.new(business_id: params[:restaurant_id], name: params[:menu][:name], price: params[:menu][:price], description: params[:menu][:description])
+		menu.user_id = session[:user_id]
+  		menu.save
+  		redirect_to business_new_path(params[:restaurant_id])
+ 	end
+
 end

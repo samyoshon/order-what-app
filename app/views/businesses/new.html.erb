@@ -26,7 +26,7 @@
 		<% @comments.each do |c| %>
 			<div id="comment" class="panel panel-default upbox">
 				<div id="comment_vote_div" class="vote_div">
-		   			<span class="vote_buttons voteButton"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+		   			<span class="vote_b	uttons voteButton"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 			   		<span class="vote_buttons"><%= c.likes %></span> 
 			    	<span class="vote_buttons voteButton"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 				</div>
@@ -55,4 +55,45 @@
         </div>
 
 	<% end %>
+</div>
+
+<div class="biz_menu">
+	<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#createMenu" id="fixedButton">
+  		Don't see what you ordered? Post it up!
+	</button>
+</div>
+
+<div class="modal fade" id="createMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Feed the community!</h4>
+      </div>
+      <div class="modal-body">
+      	<%= form_for :menu, url: create_menu_path do |f| %>
+					</br>
+							<%= hidden_field_tag "restaurant_id", params[:id] %> 
+				        <div class="input-group">
+				            <%= f.label :name, "Menu Item", class: "input-group-addon" %>
+				            <%= f.text_field :name, class: "form-control" %>
+				        </div>
+
+				        <div class="input-group">
+				            <%= f.label :price, class: "input-group-addon" %>
+				            <%= f.text_field :price, class: "form-control" %>
+				        </div>
+
+				        <div class="input-group">
+				            <%= f.label :description, class: "input-group-addon" %>
+				            <%= f.text_area :description, class: "form-control" %>
+				        </div>
+				    </br>
+				        <div class="input-group">
+				        	<%= f.submit "Create", :class => "btn btn-danger" %>
+				    	</div>
+		<% end %>
+      </div>
+    </div>
+  </div>
 </div>

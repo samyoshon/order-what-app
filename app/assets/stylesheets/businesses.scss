@@ -2,7 +2,8 @@
 	width: 100%;
 	height: 300px;
 	text-align: center;
-	background-image: url('header.jpg');
+	background: url('header.jpg') center center fixed;
+	background-size: cover;
 }
 
 .biz_title {
@@ -10,9 +11,9 @@
 	padding-top: 80px;
 	font-size: 120px;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	color: #cb3b3b;
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .biz_body {
@@ -68,6 +69,7 @@
 	height: 90%;
 	padding: 7px;
 	margin-left: 10%;
+	background-color: #f4f2f2;
 }
 
 textarea#comment_comment {
@@ -118,9 +120,16 @@ textarea#comment_comment {
 
 .menuToggle {
 	opacity: 0.5;
+	color: #cb3b3b;
 }
 
 .voteToggle {
-	text-decoration: none 	!important;
-	color: orange 			!important;
+	text-decoration: none	!important;
+	color: #cb3b3b 			!important;
+}
+
+#fixedButton {
+	position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
