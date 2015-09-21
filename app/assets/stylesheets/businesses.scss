@@ -134,3 +134,8 @@ textarea#comment_comment {
     right: 0px;
     opacity: 0.55;
 }
+
+.clickedVote {
+	color: #cb3b3b;
+	pointer-events: none;
+}

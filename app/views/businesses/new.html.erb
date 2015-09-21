@@ -26,7 +26,7 @@
 		<% @comments.each do |c| %>
 			<div id="comment" class="panel panel-default upbox">
 				<div id="comment_vote_div" class="vote_div">
-		   			<span class="vote_b	uttons voteButton"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
+		   			<span class="vote_buttons voteButton"><%= link_to '&#9650'.html_safe, comment_like_path(vote: 'up', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 			   		<span class="vote_buttons"><%= c.likes %></span> 
 			    	<span class="vote_buttons voteButton"><%= link_to '&#9660'.html_safe, comment_like_path(vote: 'down', restaurant_id: params[:id], comment_id: c.id), method: :post %></span> 
 				</div>

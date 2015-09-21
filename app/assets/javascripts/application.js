@@ -40,4 +40,8 @@ $(document).ready(function () {
     $('.menuImage').hover(function() {
     	$(this).toggleClass('menuToggle');
     });
+
+    $('.voteButton').click(function(){
+        $(this).toggleClass('clickedVote');
+    })
 });
