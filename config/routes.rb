@@ -30,6 +30,7 @@ delete '/comment/delete' => 'comments#destroy', as: :comment_delete
 
 namespace :api do
     resources :businesses, only: [:index, :show, :create, :update, :destroy]
+    resources :menus, only: [:index, :show, :create, :update, :destroy]
 end
 
 end

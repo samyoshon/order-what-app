@@ -11,11 +11,11 @@ class Business < ActiveRecord::Base
 
 	# API related below
 
-	# validates :name, presence: true
+	validates :name, presence: true
 
-	# def as_json(options={})
-	# 	super(:except => [:created_at, :updated_at])
-	# end
+	def as_json(options={})
+		super(:except => [:created_at, :updated_at])
+	end
 
 end
 
