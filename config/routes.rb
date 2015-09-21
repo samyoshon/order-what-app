@@ -28,4 +28,8 @@ get '/logout' => 'users#logout', as: :logout_user
 
 delete '/comment/delete' => 'comments#destroy', as: :comment_delete
 
+namespace :api do
+    resources :businesses, only: [:index, :show, :create, :update, :destroy]
+end
+
 end
