@@ -1,7 +1,7 @@
 ## Bopp App (Prev: OrderWhat App)
 
 #### Pitch
-I'm a frequent Yelp user (not reviewer). I find that Yelp does a great job in telling me which restaurant to check out through its ratings system. However, I've realized that when I'm at the restaurant, I still have no idea what to do; in other words, I'm not sure why the restaurant received its 4 or 5 star rating.
+I'm a frequent Yelp user (not reviewer). I find that Yelp does a great job in telling me which restaurant to check out through its ratings system. However, I've realized that when I'm at the restaurant, I still have no idea what to order; in other words, I'm not sure why the restaurant received its 4 or 5 star rating.
 
 Rather than spending time trying to filter through people's not-always-pleasing opinions to see which menu item is the driver of the restaurant's rating, I thought it'd be nice to have an app that allows people to simply up/down vote their favorite menu item. By doing so, other users would know exactly which menu item is the most highly recommended without having to deal with the amateur food critics. 
 
