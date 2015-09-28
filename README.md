@@ -14,3 +14,6 @@ Rather than spending time trying to filter through people's not-always-pleasing 
 #### Technologies Used
 Ruby on Rails, HTML, CSS, Javascript
 
+#### Coming Soon
+1. Using Yelp's API to populate the database
+2. Cleaning up the restaurant's pages to provide more detail (ie. Yelp rating, contact info, address, etc.)
