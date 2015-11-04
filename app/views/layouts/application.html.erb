@@ -18,20 +18,14 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="/">
-        <img style="max-width:100px" alt="BOP" src="logos.png">
+        <img style="max-width:25px" alt="BOP" src="https://cdn0.iconfinder.com/data/icons/thin-food-cooking/24/thin-0909_hamburger_fast_food-256.png">
       </a>
     </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
         	<% if session[:user_id] == nil %>
-          	 <a href="#login" data-toggle="modal">Login</a>
+          	 <a href="#login" data-toggle="modal" class="dropdown-toggle" >Login</a>
           <% else %>
           	 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             		<%= User.find(session[:user_id]).name %>
@@ -141,5 +135,9 @@
 
 <%= yield %>
 
+  <div class="footer">
+    <div id="footer-content"><h4>Lorem Ipsum Footer Goes Here</h4></div>
+  </div>
+  
 </body>
 </html>
