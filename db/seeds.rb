@@ -5,7 +5,8 @@ User.create!([
 Business.create!([
   {name: "Mendocino Farms", rating: 5, address: nil, description: nil, tagline: nil},
   {name: "Cruzer Pizza", rating: 5, address: nil, description: nil, tagline: nil},
-  {name: "Prime Pizza", rating: 5, address: nil, description: nil, tagline: nil}
+  {name: "Prime Pizza", rating: 5, address: nil, description: nil, tagline: nil},
+  {name: "Peppo Pizza", rating: 5, address: nil, description: nil, tagline: nil}
 ])
 
 Menu.create!([
